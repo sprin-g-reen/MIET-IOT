@@ -886,5 +886,1031 @@
     "level": "INFO",
     "message": "Helmet is not worn. Waiting...",
     "timestamp": "2025-04-11T20:13:36.037528"
+  },
+  {
+    "device": "bike_module",
+    "level": "INFO",
+    "message": "WiFi connected",
+    "timestamp": "2025-05-04T23:06:49.060145"
+  },
+  {
+    "device": "bike_module",
+    "level": "INFO",
+    "message": "WebSocket connected",
+    "timestamp": "2025-05-04T23:06:51.602949"
+  },
+  {
+    "device": "bike_module",
+    "level": "INFO",
+    "message": "WiFi connected",
+    "timestamp": "2025-05-04T23:07:31.386962"
+  },
+  {
+    "device": "bike_module",
+    "level": "INFO",
+    "message": "WebSocket connected",
+    "timestamp": "2025-05-04T23:07:34.869399"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "WiFi Connected: 192.168.1.15",
+    "timestamp": "2025-05-04T23:10:09.070279"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet worn. Starting alcohol check...",
+    "timestamp": "2025-05-04T23:10:09.123558"
+  },
+  {
+    "device": "helmet-001",
+    "level": "ACTION",
+    "message": "Helmet status: Safe",
+    "timestamp": "2025-05-04T23:10:10.253708"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Not Drunk State Detected: 147",
+    "timestamp": "2025-05-04T23:10:10.289896"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Holding state until helmet is removed...",
+    "timestamp": "2025-05-04T23:10:11.224908"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "WiFi Connected: 192.168.1.15",
+    "timestamp": "2025-05-04T23:14:04.774749"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet worn. Starting alcohol check...",
+    "timestamp": "2025-05-04T23:14:07.838896"
+  },
+  {
+    "device": "helmet-001",
+    "level": "ACTION",
+    "message": "Helmet status: Safe",
+    "timestamp": "2025-05-04T23:14:08.875622"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Not Drunk State Detected: 154",
+    "timestamp": "2025-05-04T23:14:08.916293"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Holding state until helmet is removed...",
+    "timestamp": "2025-05-04T23:14:09.850965"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "WiFi Connected: 192.168.1.15",
+    "timestamp": "2025-05-04T23:15:44.716785"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet worn. Starting alcohol check...",
+    "timestamp": "2025-05-04T23:15:44.800062"
+  },
+  {
+    "device": "helmet-001",
+    "level": "ACTION",
+    "message": "Helmet status: Safe",
+    "timestamp": "2025-05-04T23:15:45.826279"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Not Drunk State Detected: 151",
+    "timestamp": "2025-05-04T23:15:45.855827"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Holding state until helmet is removed...",
+    "timestamp": "2025-05-04T23:15:46.788942"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "WiFi Connected: 192.168.1.15",
+    "timestamp": "2025-05-04T23:16:12.271460"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet worn. Starting alcohol check...",
+    "timestamp": "2025-05-04T23:16:12.339646"
+  },
+  {
+    "device": "helmet-001",
+    "level": "ACTION",
+    "message": "Helmet status: Safe",
+    "timestamp": "2025-05-04T23:16:13.376415"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Not Drunk State Detected: 155",
+    "timestamp": "2025-05-04T23:16:13.424437"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Holding state until helmet is removed...",
+    "timestamp": "2025-05-04T23:16:14.406613"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "WiFi Connected: 192.168.1.15",
+    "timestamp": "2025-05-04T23:17:18.147008"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet worn. Starting alcohol check...",
+    "timestamp": "2025-05-04T23:17:18.212221"
+  },
+  {
+    "device": "helmet-001",
+    "level": "ACTION",
+    "message": "Helmet status: Safe",
+    "timestamp": "2025-05-04T23:17:19.277167"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Not Drunk State Detected: 163",
+    "timestamp": "2025-05-04T23:17:19.327894"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Holding state until helmet is removed...",
+    "timestamp": "2025-05-04T23:17:20.271039"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "WiFi Connected: 192.168.1.15",
+    "timestamp": "2025-05-04T23:24:58.682102"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:24:59.538589"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:25:08.798840"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "WiFi Connected: 192.168.1.15",
+    "timestamp": "2025-05-04T23:25:43.334490"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:25:44.247068"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:25:53.782849"
+  },
+  {
+    "device": "helmet_module",
+    "level": "ERROR",
+    "message": "WiFi attempt 1 failed.",
+    "timestamp": "2025-05-04T23:26:28.711645"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "WiFi Connected: 192.168.1.15",
+    "timestamp": "2025-05-04T23:26:31.893294"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:26:32.653109"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:26:41.374998"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:26:50.120710"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:26:58.826464"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:27:07.528498"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:27:16.398927"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:27:25.121472"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:27:34.015311"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:27:42.732490"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:27:51.542256"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:28:00.247775"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:28:09.054877"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:28:17.763102"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:28:26.467103"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:28:35.180506"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:28:43.890982"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:28:53.680924"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:29:02.425870"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:29:11.295986"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:29:20.025060"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:29:29.730133"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:29:38.453859"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:29:47.153123"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:29:55.856759"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:30:04.566955"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:30:13.456734"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:30:22.169014"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:30:30.875926"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:30:39.580331"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:30:48.286754"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:30:57.180899"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:31:05.993321"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:31:14.696049"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:31:23.405173"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:31:32.232689"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:31:40.942327"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:31:49.645524"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:31:58.354109"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:32:07.059661"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:32:15.762217"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:32:24.463513"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "WiFi Connected: 192.168.1.15",
+    "timestamp": "2025-05-04T23:33:06.739303"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:33:07.468556"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:33:16.177211"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:33:24.893615"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:33:33.602987"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:33:42.317377"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:33:51.038156"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:33:59.761098"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:34:08.472525"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:34:17.191370"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:34:25.907859"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:34:34.625532"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:34:43.371105"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:34:52.102767"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:35:00.812074"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:35:09.751168"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:35:18.465185"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:35:27.179727"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:35:35.903585"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "WiFi Connected: 192.168.1.15",
+    "timestamp": "2025-05-04T23:56:22.963147"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:56:23.660286"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet worn. Starting alcohol check...",
+    "timestamp": "2025-05-04T23:56:31.754522"
+  },
+  {
+    "device": "helmet-001",
+    "level": "ACTION",
+    "message": "Helmet status: Safe",
+    "timestamp": "2025-05-04T23:56:32.815219"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Not drunk: 0",
+    "timestamp": "2025-05-04T23:56:32.860546"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Waiting for helmet removal...",
+    "timestamp": "2025-05-04T23:56:33.801007"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet removed. Returning to idle...",
+    "timestamp": "2025-05-04T23:56:33.846732"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:56:35.536242"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet worn. Starting alcohol check...",
+    "timestamp": "2025-05-04T23:56:43.605297"
+  },
+  {
+    "device": "helmet-001",
+    "level": "ACTION",
+    "message": "Helmet status: Safe",
+    "timestamp": "2025-05-04T23:56:44.657912"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Not drunk: 0",
+    "timestamp": "2025-05-04T23:56:44.683961"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Waiting for helmet removal...",
+    "timestamp": "2025-05-04T23:56:45.660272"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet removed. Returning to idle...",
+    "timestamp": "2025-05-04T23:56:45.691388"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-04T23:56:47.374241"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "WiFi Connected: 192.168.1.15",
+    "timestamp": "2025-05-05T00:20:48.307428"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-05T00:20:49.029100"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-05T00:20:58.307539"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet worn. Starting alcohol check...",
+    "timestamp": "2025-05-05T00:21:06.437465"
+  },
+  {
+    "device": "helmet-001",
+    "level": "ACTION",
+    "message": "Helmet status: Safe",
+    "timestamp": "2025-05-05T00:21:07.498232"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Not drunk: 99",
+    "timestamp": "2025-05-05T00:21:07.543787"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Waiting for helmet removal...",
+    "timestamp": "2025-05-05T00:21:08.474080"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet removed. Returning to idle...",
+    "timestamp": "2025-05-05T00:21:18.558645"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-05T00:21:20.244261"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet worn. Starting alcohol check...",
+    "timestamp": "2025-05-05T00:21:28.287565"
+  },
+  {
+    "device": "helmet-001",
+    "level": "ACTION",
+    "message": "Helmet status: Safe",
+    "timestamp": "2025-05-05T00:21:29.312958"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Not drunk: 99",
+    "timestamp": "2025-05-05T00:21:29.354401"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Waiting for helmet removal...",
+    "timestamp": "2025-05-05T00:21:30.317588"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet removed. Returning to idle...",
+    "timestamp": "2025-05-05T00:21:39.396036"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-05T00:21:41.084190"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "WiFi Connected: 192.168.1.15",
+    "timestamp": "2025-05-05T00:33:39.417430"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-05T00:33:40.109776"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet worn. Starting alcohol check...",
+    "timestamp": "2025-05-05T00:33:48.305849"
+  },
+  {
+    "device": "helmet-001",
+    "level": "ACTION",
+    "message": "Helmet status: Safe",
+    "timestamp": "2025-05-05T00:33:49.464997"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Not drunk: 99",
+    "timestamp": "2025-05-05T00:33:49.648508"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Waiting for helmet removal...",
+    "timestamp": "2025-05-05T00:33:50.628763"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet removed. Returning to idle...",
+    "timestamp": "2025-05-05T00:33:50.666038"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-05T00:33:52.371150"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet worn. Starting alcohol check...",
+    "timestamp": "2025-05-05T00:34:00.418251"
+  },
+  {
+    "device": "helmet-001",
+    "level": "ACTION",
+    "message": "Helmet status: Safe",
+    "timestamp": "2025-05-05T00:34:01.442096"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Not drunk: 101",
+    "timestamp": "2025-05-05T00:34:01.479807"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Waiting for helmet removal...",
+    "timestamp": "2025-05-05T00:34:02.410729"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet removed. Returning to idle...",
+    "timestamp": "2025-05-05T00:34:07.520545"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-05T00:34:09.404479"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet worn. Starting alcohol check...",
+    "timestamp": "2025-05-05T00:34:18.514100"
+  },
+  {
+    "device": "helmet-001",
+    "level": "ACTION",
+    "message": "Helmet status: Safe",
+    "timestamp": "2025-05-05T00:34:19.563986"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Not drunk: 97",
+    "timestamp": "2025-05-05T00:34:19.594988"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Waiting for helmet removal...",
+    "timestamp": "2025-05-05T00:34:20.558685"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet removed. Returning to idle...",
+    "timestamp": "2025-05-05T00:34:23.113850"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet is not worn. Waiting...",
+    "timestamp": "2025-05-05T00:34:24.802708"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "WiFi Connected: 192.168.1.15",
+    "timestamp": "2025-05-05T00:47:05.647878"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet worn. Starting alcohol check...",
+    "timestamp": "2025-05-05T00:47:05.686436"
+  },
+  {
+    "device": "helmet-001",
+    "level": "ACTION",
+    "message": "Helmet status: Safe",
+    "timestamp": "2025-05-05T00:47:06.745138"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Not drunk: 144",
+    "timestamp": "2025-05-05T00:47:06.779888"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Waiting for helmet removal...",
+    "timestamp": "2025-05-05T00:47:08.195898"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "WiFi Connected: 192.168.1.15",
+    "timestamp": "2025-05-05T00:47:58.979593"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet worn. Starting alcohol check...",
+    "timestamp": "2025-05-05T00:47:59.084608"
+  },
+  {
+    "device": "helmet-001",
+    "level": "ACTION",
+    "message": "Helmet status: Safe",
+    "timestamp": "2025-05-05T00:48:00.122894"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Not drunk: 107",
+    "timestamp": "2025-05-05T00:48:00.251491"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Waiting for helmet removal...",
+    "timestamp": "2025-05-05T00:48:01.212467"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet removed. Returning to idle...",
+    "timestamp": "2025-05-05T00:48:24.891257"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet worn. Starting alcohol check...",
+    "timestamp": "2025-05-05T00:48:25.926974"
+  },
+  {
+    "device": "helmet-001",
+    "level": "ACTION",
+    "message": "Helmet status: Safe",
+    "timestamp": "2025-05-05T00:48:26.957934"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Not drunk: 112",
+    "timestamp": "2025-05-05T00:48:26.996447"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Waiting for helmet removal...",
+    "timestamp": "2025-05-05T00:48:27.928315"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet removed. Returning to idle...",
+    "timestamp": "2025-05-05T00:48:27.965094"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet worn. Starting alcohol check...",
+    "timestamp": "2025-05-05T00:48:29.014586"
+  },
+  {
+    "device": "helmet-001",
+    "level": "ACTION",
+    "message": "Helmet status: Safe",
+    "timestamp": "2025-05-05T00:48:30.050631"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Not drunk: 86",
+    "timestamp": "2025-05-05T00:48:30.104275"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Waiting for helmet removal...",
+    "timestamp": "2025-05-05T00:48:31.031409"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet removed. Returning to idle...",
+    "timestamp": "2025-05-05T00:48:32.070368"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Helmet worn. Starting alcohol check...",
+    "timestamp": "2025-05-05T00:48:33.106073"
+  },
+  {
+    "device": "helmet-001",
+    "level": "ACTION",
+    "message": "Helmet status: Safe",
+    "timestamp": "2025-05-05T00:48:34.142606"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Not drunk: 112",
+    "timestamp": "2025-05-05T00:48:34.412136"
+  },
+  {
+    "device": "helmet_module",
+    "level": "INFO",
+    "message": "Waiting for helmet removal...",
+    "timestamp": "2025-05-05T00:48:35.343071"
   }
 ]

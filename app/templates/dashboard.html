@@ -4,467 +4,229 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Helmet System</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <style>
         :root {
-            --neon-primary: #00f7ff;
-            --neon-secondary: #00ff9f;
-            --neon-accent: #ff00ff;
-            --neon-danger: #ff0055;
-            --neon-warning: #ffaa00;
-            --neon-purple: #9d00ff;
-            --neon-yellow: #ffff00;
-            --bg-dark: #000000;
-            --bg-darker: #0a0a0a;
-            --bg-light: #1a1a1a;
-            --text-primary: #ffffff;
-            --text-secondary: #b3b3b3;
+            --primary: #1976d2;
+            --primary-light: #63a4ff;
+            --primary-dark: #004ba0;
+            --secondary: #f5f7fa;
+            --success: #43a047;
+            --error: #e53935;
+            --warning: #ffa000;
+            --text: #222;
+            --text-light: #666;
+            --bg: #fafdff;
+            --card: #fff;
+            --border: #e0e0e0;
         }
-
-        @keyframes glitch {
-            0% { transform: translate(0) }
-            20% { transform: translate(-2px, 2px) }
-            40% { transform: translate(-2px, -2px) }
-            60% { transform: translate(2px, 2px) }
-            80% { transform: translate(2px, -2px) }
-            100% { transform: translate(0) }
-        }
-
-        @keyframes hologram {
-            0% { opacity: 0.8; transform: perspective(1000px) rotateX(0deg) }
-            50% { opacity: 0.9; transform: perspective(1000px) rotateX(5deg) }
-            100% { opacity: 0.8; transform: perspective(1000px) rotateX(0deg) }
-        }
-
-        @keyframes neon-pulse {
-            0% { text-shadow: 0 0 7px var(--neon-primary), 0 0 10px var(--neon-primary), 0 0 21px var(--neon-primary), 0 0 42px var(--neon-primary), 0 0 82px var(--neon-primary), 0 0 92px var(--neon-primary), 0 0 102px var(--neon-primary), 0 0 151px var(--neon-primary); }
-            50% { text-shadow: 0 0 7px var(--neon-primary), 0 0 10px var(--neon-primary), 0 0 21px var(--neon-primary), 0 0 42px var(--neon-primary), 0 0 82px var(--neon-primary), 0 0 92px var(--neon-primary), 0 0 102px var(--neon-primary), 0 0 151px var(--neon-primary), 0 0 20px var(--neon-secondary); }
-            100% { text-shadow: 0 0 7px var(--neon-primary), 0 0 10px var(--neon-primary), 0 0 21px var(--neon-primary), 0 0 42px var(--neon-primary), 0 0 82px var(--neon-primary), 0 0 92px var(--neon-primary), 0 0 102px var(--neon-primary), 0 0 151px var(--neon-primary); }
-        }
-
         body {
-            background: var(--bg-dark);
-            color: var(--text-primary);
-            font-family: 'Share Tech Mono', monospace;
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
             min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
         }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(0, 247, 255, 0.15) 0%, transparent 25%),
-                radial-gradient(circle at 80% 80%, rgba(0, 255, 159, 0.15) 0%, transparent 25%),
-                radial-gradient(circle at 50% 50%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
-                linear-gradient(45deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.98) 100%);
-            z-index: -1;
-            animation: hologram 8s infinite;
-        }
-
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(0, 247, 255, 0.1) 1px, rgba(0, 247, 255, 0.1) 2px),
-                repeating-linear-gradient(90deg, transparent 0px, transparent 1px, rgba(0, 247, 255, 0.1) 1px, rgba(0, 247, 255, 0.1) 2px);
-            background-size: 20px 20px;
-            z-index: -1;
-            opacity: 0.5;
-            animation: glitch 0.3s infinite;
-        }
-
-        .cyber-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 1.5rem;
-            padding: 2rem;
-            max-width: 1800px;
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 40px 24px 24px 24px;
         }
-
-        .cyber-card {
-            background: rgba(10, 10, 10, 0.6);
-            border: 1px solid var(--neon-primary);
-            box-shadow: 0 0 20px rgba(0, 247, 255, 0.2),
-                       0 0 40px rgba(0, 247, 255, 0.1),
-                       0 0 60px rgba(0, 247, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 0;
-            padding: 1.5rem;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
-            animation: hologram 8s infinite;
+        header {
+            background: var(--card);
+            border-bottom: 1.5px solid var(--border);
+            padding: 40px 0 24px 0;
+            margin-bottom: 48px;
         }
-
-        .cyber-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(0, 247, 255, 0.05), transparent);
-            transform: translateX(-100%);
-            animation: scan 2s linear infinite;
+        .header-title {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 0 12px 0;
+            letter-spacing: 0.5px;
         }
-
-        .cyber-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 30px rgba(0, 247, 255, 0.2);
-            border-color: var(--neon-secondary);
+        .header-sub {
+            color: var(--text-light);
+            font-size: 1.15rem;
         }
-
-        .cyber-title {
-            font-family: 'Orbitron', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            background: linear-gradient(90deg, var(--neon-primary), var(--neon-secondary), var(--neon-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            position: relative;
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 36px;
+        }
+        .card {
+            background: var(--card);
+            border-radius: 18px;
+            box-shadow: 0 4px 16px rgba(25, 118, 210, 0.07);
+            border: 1.5px solid var(--border);
+            padding: 36px 32px 32px 32px;
+            display: flex;
+            flex-direction: column;
+            transition: box-shadow 0.18s, transform 0.18s;
+        }
+        .card:hover {
+            box-shadow: 0 8px 32px rgba(25, 118, 210, 0.13);
+            transform: translateY(-2px) scale(1.01);
+        }
+        .card-title {
+            font-size: 1.45rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 24px;
+            letter-spacing: 0.2px;
+        }
+        .device-status {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+        }
+        .device-name {
             font-weight: 600;
-            display: inline-block;
-            animation: neon-pulse 2s infinite;
+            color: var(--primary);
+            font-size: 1.18rem;
         }
-
-        .cyber-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, var(--neon-primary), var(--neon-secondary));
-            box-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
-        }
-
         .status-badge {
-            padding: 0.5rem 1rem;
-            border-radius: 0;
+            display: inline-block;
+            padding: 6px 22px;
+            border-radius: 18px;
+            font-size: 1.05rem;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 5px currentColor;
-            animation: pulse-slow 2s infinite;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.875rem;
-            clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
-            position: relative;
-            overflow: hidden;
+            color: #fff;
+            letter-spacing: 0.5px;
         }
-
-        .status-badge::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transform: translateX(-100%);
-            animation: scan 2s linear infinite;
-        }
-
-        .status-badge.safe {
-            background: rgba(0, 255, 159, 0.1);
-            color: var(--neon-secondary);
-            border: 1px solid var(--neon-secondary);
-            box-shadow: 0 0 10px rgba(0, 255, 159, 0.2),
-                       0 0 20px rgba(0, 255, 159, 0.1);
-        }
-
-        .status-badge.drunken {
-            background: rgba(255, 0, 85, 0.1);
-            color: var(--neon-danger);
-            border: 1px solid var(--neon-danger);
-            box-shadow: 0 0 10px rgba(255, 0, 85, 0.2);
-        }
-
-        .status-badge.override {
-            background: rgba(255, 170, 0, 0.1);
-            color: var(--neon-warning);
-            border: 1px solid var(--neon-warning);
-            box-shadow: 0 0 10px rgba(255, 170, 0, 0.2);
-        }
-
-        .cyber-button {
-            background: linear-gradient(90deg, var(--neon-primary), var(--neon-secondary));
-            border: none;
-            color: var(--bg-dark);
-            font-weight: 600;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0;
-            transition: all 0.3s ease;
-            font-family: 'Orbitron', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.875rem;
-            clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cyber-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transform: translateX(-100%);
-            animation: scan 2s linear infinite;
-        }
-
-        .cyber-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0 20px rgba(0, 247, 255, 0.3),
-                       0 0 40px rgba(0, 247, 255, 0.2);
-        }
-
-        .cyber-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0;
-            margin-top: 1.5rem;
-            animation: hologram 8s infinite;
-        }
-
-        .cyber-table th {
-            background: rgba(0, 0, 0, 0.8);
-            color: var(--neon-primary);
-            padding: 1rem;
-            text-align: left;
-            font-family: 'Orbitron', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.75rem;
-            border-bottom: 1px solid var(--neon-primary);
-            text-shadow: 0 0 5px var(--neon-primary);
-        }
-
-        .cyber-table td {
-            padding: 1rem;
-            border-bottom: 1px solid rgba(0, 247, 255, 0.1);
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-        }
-
-        .cyber-table tr:hover {
-            background: rgba(0, 247, 255, 0.05);
-            color: var(--text-primary);
-        }
-
-        #map {
-            height: 450px;
-            width: 100%;
-            border-radius: 0;
-            border: 1px solid var(--neon-primary);
-            box-shadow: 0 0 20px rgba(0, 247, 255, 0.2),
-                       0 0 40px rgba(0, 247, 255, 0.1);
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
-            animation: hologram 8s infinite;
-        }
-
+        .status-badge.safe { background: var(--success); }
+        .status-badge.drunken { background: var(--error); }
+        .status-badge.override { background: var(--warning); color: #222; }
         .action-list {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-
         .action-item {
-            padding: 0.75rem;
-            margin-bottom: 0.5rem;
-            background: rgba(0, 247, 255, 0.05);
-            border-left: 2px solid var(--neon-primary);
-            font-family: 'Share Tech Mono', monospace;
-            transition: all 0.3s ease;
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
-            position: relative;
-            overflow: hidden;
+            font-size: 1.05rem;
+            color: var(--text-light);
+            padding: 10px 0 10px 0;
+            border-bottom: 1px solid var(--border);
         }
-
-        .action-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(0, 247, 255, 0.1), transparent);
-            transform: translateX(-100%);
-            animation: scan 2s linear infinite;
+        .action-item:last-child { border-bottom: none; }
+        #map {
+            height: 320px;
+            width: 100%;
+            border-radius: 10px;
+            border: 1.5px solid var(--border);
+            margin-top: 12px;
         }
-
-        .action-item:hover {
-            background: rgba(0, 247, 255, 0.1);
-            transform: translateX(5px);
-            color: var(--text-primary);
-        }
-
-        @keyframes scan {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
-        }
-
-        @keyframes pulse-slow {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        .cyber-header {
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem;
-            border-bottom: 1px solid var(--neon-primary);
-            margin-bottom: 2rem;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 95% 100%, 0 100%);
-            box-shadow: 0 0 20px rgba(0, 247, 255, 0.2);
-            animation: hologram 8s infinite;
-        }
-
-        .cyber-footer {
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 1.5rem;
-            border-top: 1px solid var(--neon-primary);
-            margin-top: 2rem;
-            text-align: center;
-            font-family: 'Orbitron', sans-serif;
-            color: var(--text-secondary);
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
-            box-shadow: 0 0 20px rgba(0, 247, 255, 0.2);
-            animation: hologram 8s infinite;
-        }
-
-        .cyber-select {
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid var(--neon-primary);
-            color: var(--text-primary);
-            padding: 0.75rem 1rem;
-            border-radius: 0;
-            font-family: 'Share Tech Mono', monospace;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            font-size: 0.875rem;
-            clip-path: polygon(0 0, 100% 0, 95% 100%, 0 100%);
-        }
-
-        .cyber-select:focus {
-            outline: none;
-            box-shadow: 0 0 20px rgba(0, 247, 255, 0.2);
-            border-color: var(--neon-secondary);
-        }
-
-        .cyber-select option {
-            background: var(--bg-darker);
-            color: var(--text-primary);
-        }
-
-        .device-status {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
-        }
-
-        .device-name {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.25rem;
-            color: var(--neon-primary);
-            letter-spacing: 2px;
-            text-shadow: 0 0 5px var(--neon-primary);
-        }
-
         .controls {
             display: flex;
-            gap: 1rem;
+            gap: 18px;
             align-items: center;
         }
-
-        .grid-span-4 {
-            grid-column: span 4;
+        .mui-btn {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 28px;
+            font-size: 1.08rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.18s, box-shadow 0.18s;
+            box-shadow: 0 2px 8px rgba(25, 118, 210, 0.04);
         }
-
-        .grid-span-8 {
-            grid-column: span 8;
+        .mui-btn:hover {
+            background: var(--primary-dark);
+            box-shadow: 0 4px 16px rgba(25, 118, 210, 0.09);
         }
-
-        .grid-span-12 {
-            grid-column: span 12;
+        .mui-select {
+            padding: 12px 18px;
+            border-radius: 8px;
+            border: 1.5px solid var(--border);
+            background: var(--secondary);
+            font-size: 1.08rem;
+            color: var(--text);
+        }
+        .mui-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 24px;
+        }
+        .mui-table th, .mui-table td {
+            padding: 18px 12px;
+            text-align: left;
+        }
+        .mui-table th {
+            background: var(--primary-light);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.08rem;
+            letter-spacing: 0.2px;
+        }
+        .mui-table tr { background: var(--card); }
+        .mui-table tr:nth-child(even) { background: var(--secondary); }
+        .mui-table td {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .mui-table tr:last-child td { border-bottom: none; }
+        footer {
+            background: var(--card);
+            border-top: 1.5px solid var(--border);
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.05rem;
+            padding: 28px 0 18px 0;
+            margin-top: 56px;
         }
     </style>
 </head>
 <body>
-    <header class="cyber-header">
-        <div class="container mx-auto">
-            <h1 class="cyber-title">Smart Helmet System</h1>
-            <p class="text-cyber-secondary">Last Updated: <span id="lastUpdate">{{ last_update }}</span></p>
+    <header>
+        <div class="container">
+            <div class="header-title">Smart Helmet System</div>
+            <div class="header-sub">Last Updated: <span id="lastUpdate">{{ last_update }}</span></div>
         </div>
     </header>
-
-    <main class="cyber-grid">
-        <!-- Helmet Status -->
-        <div class="cyber-card grid-span-4">
-            <h2 class="cyber-title">Helmet Status</h2>
-            <div id="helmetStatus">
-                <div class="device-status">
-                    <h3 class="device-name">Helmet Module</h3>
-                    <span class="status-badge safe">Initializing...</span>
+    <div class="container">
+        <div class="dashboard-grid">
+            <!-- Helmet Status -->
+            <div class="card">
+                <div class="card-title">Helmet Status</div>
+                <div id="helmetStatus">
+                    <div class="device-status">
+                        <span class="device-name">Helmet Module</span>
+                        <span class="status-badge safe">Initializing...</span>
+                    </div>
+                    <ul class="action-list" id="helmetActions"></ul>
                 </div>
-                <div class="action-list" id="helmetActions"></div>
+            </div>
+            <!-- Bike Status -->
+            <div class="card">
+                <div class="card-title">Bike Status</div>
+                <div id="bikeStatus">
+                    <div class="device-status">
+                        <span class="device-name">Bike Module</span>
+                        <span class="status-badge safe">Initializing...</span>
+                    </div>
+                    <ul class="action-list" id="bikeActions"></ul>
+                </div>
+            </div>
+            <!-- GPS Map -->
+            <div class="card">
+                <div class="card-title">Device Locations</div>
+                <div id="map"></div>
             </div>
         </div>
-
-        <!-- Bike Status -->
-        <div class="cyber-card grid-span-4">
-            <h2 class="cyber-title">Bike Status</h2>
-            <div id="bikeStatus">
-                <div class="device-status">
-                    <h3 class="device-name">Bike Module</h3>
-                    <span class="status-badge safe">Initializing...</span>
-                </div>
-                <div class="action-list" id="bikeActions"></div>
-            </div>
-        </div>
-
-        <!-- GPS Map -->
-        <div class="cyber-card grid-span-4">
-            <h2 class="cyber-title">Device Locations</h2>
-            <div id="map"></div>
-        </div>
-
         <!-- System Logs -->
-        <div class="cyber-card grid-span-12">
-            <div class="device-status">
-                <h2 class="cyber-title">System Logs</h2>
+        <div class="card" style="margin-top:32px;">
+            <div class="device-status" style="margin-bottom: 20px;">
+                <div class="card-title">System Logs</div>
                 <div class="controls">
-                    <button onclick="refreshLogs()" class="cyber-button">Refresh</button>
-                    <select id="logFilter" onchange="filterLogs()" class="cyber-select">
+                    <button onclick="refreshLogs()" class="mui-btn">Refresh</button>
+                    <select id="logFilter" onchange="filterLogs()" class="mui-select">
                         <option value="all">All Logs</option>
                         <option value="INFO">Info</option>
                         <option value="ERROR">Error</option>
@@ -474,7 +236,7 @@
                     </select>
                 </div>
             </div>
-            <table class="cyber-table">
+            <table class="mui-table">
                 <thead>
                     <tr>
                         <th>Time</th>
@@ -499,12 +261,10 @@
                 </tbody>
             </table>
         </div>
-    </main>
-
-    <footer class="cyber-footer">
-        <p>Smart Helmet System &copy; 2024</p>
+    </div>
+    <footer>
+        Smart Helmet System &copy; 2024
     </footer>
-
     <script>
         let ws;
         let reconnectAttempts = 0;
@@ -514,68 +274,34 @@
         let markers = {};
         let helmetActions = [];
         let bikeActions = [];
-        let lastLogCount = 0;
-
+        let pollingInterval = null;
         function initMap() {
             map = L.map('map').setView([0, 0], 2);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenStreetMap contributors'
             }).addTo(map);
-            
-            // Hide loading overlay
-            document.getElementById('mapOverlay').classList.add('hidden');
         }
-
-        function showToast(message, type = 'info') {
-            const toast = document.createElement('div');
-            toast.className = `mb-4 p-4 rounded-lg shadow-lg ${
-                type === 'error' ? 'bg-cyber-danger text-cyber-dark' :
-                type === 'success' ? 'bg-cyber-success text-cyber-dark' :
-                type === 'warning' ? 'bg-cyber-warning text-cyber-dark' :
-                'bg-cyber-primary text-cyber-dark'
-            }`;
-            toast.textContent = message;
-            
-            const container = document.getElementById('toastContainer');
-            container.appendChild(toast);
-            
-            setTimeout(() => {
-                toast.classList.add('toast-enter-active');
-            }, 10);
-            
-            setTimeout(() => {
-                toast.classList.add('toast-exit-active');
-                setTimeout(() => {
-                    container.removeChild(toast);
-                }, 300);
-            }, 5000);
-        }
-
         function updateDeviceStatus(data) {
             const deviceType = data.device.includes('helmet') ? 'helmet' : 'bike';
             const container = document.getElementById(`${deviceType}Status`);
             const statusSpan = container.querySelector('.status-badge');
-            
-            // Remove all status classes
             statusSpan.classList.remove('safe', 'drunken', 'override');
-            
-            // Add appropriate status class
-            if (data.status === 'safe') {
+            if (data.status === 'safe' || data.status === 'not_drunken') {
                 statusSpan.classList.add('safe');
+                statusSpan.textContent = 'SAFE';
             } else if (data.status === 'drunken') {
                 statusSpan.classList.add('drunken');
+                statusSpan.textContent = 'DRUNKEN';
             } else if (data.status === 'override') {
                 statusSpan.classList.add('override');
+                statusSpan.textContent = 'OVERRIDE';
+            } else {
+                statusSpan.textContent = data.status.toUpperCase();
             }
-            
-            statusSpan.textContent = data.status.toUpperCase();
-            
-            // Update actions list
             const actionList = document.getElementById(`${deviceType}Actions`);
             const actionItem = document.createElement('li');
             actionItem.className = 'action-item';
             actionItem.textContent = `${new Date().toLocaleTimeString()} - ${data.status}`;
-            
             if (deviceType === 'helmet') {
                 helmetActions.unshift(actionItem);
                 if (helmetActions.length > 5) helmetActions.pop();
@@ -583,20 +309,14 @@
                 bikeActions.unshift(actionItem);
                 if (bikeActions.length > 5) bikeActions.pop();
             }
-            
-            // Update action lists
             document.getElementById('helmetActions').innerHTML = '';
             helmetActions.forEach(action => document.getElementById('helmetActions').appendChild(action.cloneNode(true)));
-            
             document.getElementById('bikeActions').innerHTML = '';
             bikeActions.forEach(action => document.getElementById('bikeActions').appendChild(action.cloneNode(true)));
         }
-
         function updateGPSMarker(data) {
             const { device, latitude, longitude } = data;
-            
             if (!map) return;
-            
             if (markers[device]) {
                 markers[device].setLatLng([latitude, longitude]);
             } else {
@@ -604,84 +324,92 @@
                 marker.bindPopup(`<b>${device}</b><br>Last seen: ${new Date().toLocaleString()}`);
                 markers[device] = marker;
             }
-            
-            // Center map on the new marker
             map.setView([latitude, longitude], 15);
         }
-
-        function showStatusNotification(data) {
-            let message = '';
-            let type = 'info';
-            
-            switch (data.status) {
-                case 'drunken':
-                    message = `🚨 Alcohol detected in ${data.device}`;
-                    type = 'error';
-                    break;
-                case 'safe':
-                    message = `✅ ${data.device} is safe`;
-                    type = 'success';
-                    break;
-                case 'override':
-                    message = `⚠️ Override enabled for ${data.device}`;
-                    type = 'warning';
-                    break;
-            }
-            
-            if (message) {
-                showToast(message, type);
-            }
+        function updateLogsTable(logs) {
+            const logTable = document.getElementById('logTable');
+            logTable.innerHTML = '';
+            logs.forEach(log => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${log.timestamp}</td>
+                    <td>${log.device}</td>
+                    <td><span class="status-badge ${log.level.toLowerCase()}">${log.level}</span></td>
+                    <td>${log.message}</td>
+                `;
+                logTable.appendChild(tr);
+            });
+            filterLogs();
         }
-
+        function fetchLogs() {
+            fetch('/dashboard', { headers: { 'X-Requested-With': 'XMLHttpRequest' } })
+                .then(response => response.text())
+                .then(html => {
+                    // Parse logs from the HTML response (fragile, but works for fallback)
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const newRows = doc.querySelectorAll('#logTable tr');
+                    const logs = Array.from(newRows).map(row => {
+                        const tds = row.querySelectorAll('td');
+                        return {
+                            timestamp: tds[0]?.textContent || '',
+                            device: tds[1]?.textContent || '',
+                            level: tds[2]?.textContent?.trim() || '',
+                            message: tds[3]?.textContent || ''
+                        };
+                    });
+                    updateLogsTable(logs);
+                });
+        }
         function connectWebSocket() {
             ws = new WebSocket(`ws://${window.location.host}/ws`);
-            
             ws.onopen = () => {
-                console.log('WebSocket Connected');
-                updateConnectionStatus(true);
                 reconnectAttempts = 0;
+                if (pollingInterval) {
+                    clearInterval(pollingInterval);
+                    pollingInterval = null;
+                }
             };
-
             ws.onclose = () => {
-                console.log('WebSocket Disconnected');
-                updateConnectionStatus(false);
                 if (reconnectAttempts < maxReconnectAttempts) {
                     setTimeout(connectWebSocket, reconnectDelay);
                     reconnectAttempts++;
+                } else if (!pollingInterval) {
+                    pollingInterval = setInterval(fetchLogs, 10000);
                 }
             };
-
             ws.onmessage = (event) => {
                 const data = JSON.parse(event.data);
                 if (data.type === 'status_update') {
                     updateDeviceStatus(data.data);
-                    showStatusNotification(data.data);
                 } else if (data.type === 'gps_update') {
                     updateGPSMarker(data.data);
+                } else if (data.type === 'log_update') {
+                    // Expecting data.data to be a log entry or array of logs
+                    if (Array.isArray(data.data)) {
+                        updateLogsTable(data.data);
+                    } else {
+                        // Add new log to the top
+                        const logTable = document.getElementById('logTable');
+                        const tr = document.createElement('tr');
+                        const log = data.data;
+                        tr.innerHTML = `
+                            <td>${log.timestamp}</td>
+                            <td>${log.device}</td>
+                            <td><span class="status-badge ${log.level.toLowerCase()}">${log.level}</span></td>
+                            <td>${log.message}</td>
+                        `;
+                        logTable.insertBefore(tr, logTable.firstChild);
+                        // Optionally, keep only last 100 rows
+                        while (logTable.rows.length > 100) logTable.deleteRow(-1);
+                        filterLogs();
+                    }
                 }
             };
         }
-
-        function updateConnectionStatus(connected) {
-            const status = document.getElementById('connectionStatus');
-            const dot = status.querySelector('span');
-            const text = status.querySelector('span:last-child');
-            
-            if (connected) {
-                dot.classList.remove('bg-cyber-secondary');
-                dot.classList.add('bg-cyber-success');
-                text.textContent = 'Connected';
-            } else {
-                dot.classList.remove('bg-cyber-success');
-                dot.classList.add('bg-cyber-secondary');
-                text.textContent = 'Disconnected';
-            }
-        }
-
         function filterLogs() {
             const filter = document.getElementById('logFilter').value;
             const rows = document.querySelectorAll('#logTable tr');
-            
             rows.forEach(row => {
                 const levelCell = row.querySelector('td:nth-child(3) span');
                 if (filter === 'all' || levelCell.textContent.trim() === filter) {
@@ -691,15 +419,18 @@
                 }
             });
         }
-
         function refreshLogs() {
-            window.location.reload();
+            fetchLogs();
         }
-
-        // Initialize map and WebSocket connection
         document.addEventListener('DOMContentLoaded', () => {
             initMap();
             connectWebSocket();
+            // Fallback polling if WebSocket never connects
+            setTimeout(() => {
+                if (!ws || ws.readyState !== 1) {
+                    pollingInterval = setInterval(fetchLogs, 10000);
+                }
+            }, 3000);
         });
     </script>
 </body>

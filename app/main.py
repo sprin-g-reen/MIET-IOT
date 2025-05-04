@@ -38,10 +38,10 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 templates = Jinja2Templates(directory="app/templates")
 
 # Initialize Twilio client
-twilio_client = Client(
-    os.getenv("TWILIO_ACCOUNT_SID"),
-    os.getenv("TWILIO_AUTH_TOKEN")
-)
+# twilio_client = Client(
+#     os.getenv("TWILIO_ACCOUNT_SID"),
+#     os.getenv("TWILIO_AUTH_TOKEN")
+# )
 
 # WebSocket connections
 active_connections: Set[WebSocket] = set()
@@ -111,6 +111,27 @@ manager = ConnectionManager()
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
     active_connections.add(websocket)
+    # Send current status for helmet and bike on connect
+    helmet_status = await data_manager.get_device_status("helmet-001")
+    bike_status = await data_manager.get_device_status("bike-001")
+    if helmet_status:
+        await websocket.send_json({
+            "type": "status_update",
+            "data": {
+                "device": "helmet-001",
+                "status": helmet_status.status,
+                "timestamp": helmet_status.timestamp
+            }
+        })
+    if bike_status:
+        await websocket.send_json({
+            "type": "status_update",
+            "data": {
+                "device": "bike-001",
+                "status": bike_status.status,
+                "timestamp": bike_status.timestamp
+            }
+        })
     try:
         while True:
             # Keep connection alive
@@ -141,14 +162,14 @@ async def drunken_alert(uuid: str, alcohol_level: int, timestamp: str):
     await data_manager.add_log(uuid, "SECURITY", f"Alcohol detected: {alcohol_level}")
     
     # Send SMS alert
-    try:
-        twilio_client.messages.create(
-            body=f"🚨 ALERT: Alcohol detected in helmet {uuid} (Level: {alcohol_level})",
-            from_=os.getenv("TWILIO_PHONE_NUMBER"),
-            to=os.getenv("ALERT_PHONE_NUMBER")
-        )
-    except Exception as e:
-        await data_manager.add_log(uuid, "ERROR", f"Failed to send SMS: {str(e)}")
+    # try:
+    #     twilio_client.messages.create(
+    #         body=f"🚨 ALERT: Alcohol detected in helmet {uuid} (Level: {alcohol_level})",
+    #         from_=os.getenv("TWILIO_PHONE_NUMBER"),
+    #         to=os.getenv("ALERT_PHONE_NUMBER")
+    #     )
+    # except Exception as e:
+    #     await data_manager.add_log(uuid, "ERROR", f"Failed to send SMS: {str(e)}")
     
     # Broadcast status update
     await broadcast_event("status_update", {
